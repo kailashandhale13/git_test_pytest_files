@@ -1,0 +1,74 @@
+'''# negative indexing 
+my_list = [1,2,3,4,5,56,7,8]
+print(my_list[-1])'''
+
+
+'''#Can you differentiate between global and local variables in Python?
+
+my_globle_veriable = 10
+
+def my_function():
+    my_local = 5
+    global my_globle_veriable
+    my_globle_veriable = 20
+    print(f'my globle veriable = {my_globle_veriable}')
+    print(f'my local variable = {my_local}')
+
+my_function()
+print(f'my_globle_veriable outside the func = {my_globle_veriable}')'''
+
+
+
+'''import pandas as pd
+
+# Creating a DataFrame
+data = {
+    'A': [1, 2, 3, 4],
+    'B': [10, 20, 30, 40],
+    'C': [100, 200, 300, 400]
+}
+
+df = pd.DataFrame(data,index=['A','B','C','D'])
+print(df)
+
+df = df.loc['A':'C','A':'D']
+print(df)
+
+df = df.iloc[0:4,0:3]
+print('iloc',df)'''
+
+# #What is a map function in Python?
+
+# def square(n):
+#     return n*n
+
+
+# result = map(square,[1,2,3,4,5])
+# print(tuple(result))
+
+
+# my_list = map(lambda x: x*x ,[1,2,3,4,5])
+# print('using lambda--',list(my_list))
+
+
+# # filter funcation 
+
+# mylist = [1,2,3,4,5,6,7,8]
+
+# def is_even(n):
+#     if n % 2 ==0:
+#         return n
+    
+# result = filter(is_even,mylist)
+# print(list(result))
+
+# reduce function
+import functools
+def custom_sum(number1,number2):
+    return number1 + number2
+
+result = functools.reduce(custom_sum,[1,2,3,4,5])
+print(result)
+
+total_sum = functools.reduce(lambda x,y : x+y,[1,2,3,4,5,6,7])
+print('using lambda --',total_sum)
